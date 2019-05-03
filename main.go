@@ -82,7 +82,7 @@ func normalizeStringsLength(lines []string, maxwidth int) []string {
 }
 
 // printFigure given a figure name prints it.
-// Currently accepts `cow` and `stegosaurus`.
+// Currently accepts `cow`, `stegosaurus`, and `nanwan`.
 func printFigure(name string) {
 
 	var cow = `         \  ^__^
@@ -108,12 +108,37 @@ func printFigure(name string) {
                       |_____|        |_____|         ~ - . _ _ _ _ _>
 
     `
+	var nanwan = `         \     .-.  .-.
+          \    |  \/  |
+           \  /,   ,_  ` + "`" + `'-.
+            .-|\   /` + "`" + `\     '.
+          .'  0/   | 0\  \_  ` + "`" + `".
+       .-'  _,/    '--'.'|#''---'
+        ` + "`" + `--'  |       /   \#
+              |      /     \#
+              \     ;|\    .\#
+              |' ' //  \   ::\#
+              \   /` + "`" + `    \   ':\#
+               ` + "`" + `"` + "`" + `       \..   \#
+                          \::.  \#
+                           \::   \#
+                            \'  .:\#
+                             \  :::\#
+                              \  '::\#
+                               \     \#
+                                \:.   \#
+                                 \::   \#
+                                  \'   .\#
+                               jgs \   ::\#
+`
 
 	switch name {
 	case "cow":
 		fmt.Println(cow)
 	case "stegosaurus":
 		fmt.Println(stegosaurus)
+	case "nanwan":
+		fmt.Println(nanwan)
 	default:
 		fmt.Println("Unknown figure")
 	}
@@ -128,7 +153,7 @@ func main() {
 	}
 
 	var figure string
-	flag.StringVar(&figure, "f", "cow", "the figure name. Valid values are `cow` and `stegosaurus`")
+	flag.StringVar(&figure, "f", "nanwan", "the figure name. Valid values are `cow`, `stegosaurus`, and `nanwan`")
 	flag.Parse()
 
 	var lines []string
